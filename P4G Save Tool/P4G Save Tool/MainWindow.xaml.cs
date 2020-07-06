@@ -391,7 +391,6 @@ namespace P4G_Save_Tool
         List<Item> costumes;
         List<Item> other;
         SocialLink[] socialLinkIDs;
-        bool isFTP;
         string originalTitle = "P4G Save Tool";
         List<Item> personae;
         string[] courageLevels;
@@ -425,7 +424,6 @@ namespace P4G_Save_Tool
 
         public MainWindow()
         {
-            isFTP = false;
             readyEvents = false;
             InitializeComponent();
             invScroll = (ScrollViewer)invBox.GetDescendantByType(typeof(ScrollViewer));
@@ -799,7 +797,6 @@ namespace P4G_Save_Tool
 
                     OpenFile(File.OpenRead(file));
                     Title = originalTitle + " - " + filename;
-                    isFTP = false;
                 }
             }
         }
@@ -1661,32 +1658,6 @@ namespace P4G_Save_Tool
             }
         }
 
-        private void OpenFTP_Click(object sender, RoutedEventArgs e)
-        {
-            string ftpAddress = "";
-            string Username = "";
-            string Password = "";
-            bool UseBinary = true;
-            bool UsePassive = false;
-
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpAddress);
-            request.Method = WebRequestMethods.Ftp.DownloadFile;
-            request.KeepAlive = true;
-            request.UsePassive = UsePassive;
-            request.UseBinary = UseBinary;
-
-            request.Credentials = new NetworkCredential(Username, Password);
-
-            FtpWebResponse response = (FtpWebResponse)request.GetResponse();
-
-            Stream responseStream = response.GetResponseStream();
-
-            OpenFile(responseStream);
-            response.Close();
-            filename = ftpAddress;
-            isFTP = true;
-        }
-
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog d = new SaveFileDialog();
@@ -1695,7 +1666,6 @@ namespace P4G_Save_Tool
             {
                 SaveFile(File.OpenWrite(filename = d.FileName));
                 Title = originalTitle + " - " + d.SafeFileName;
-                isFTP = false;
             }
         }
 
@@ -1856,7 +1826,6 @@ namespace P4G_Save_Tool
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 OpenFile(File.OpenRead(filename = files[0]));
                 Title = originalTitle + " - " + filename;
-                isFTP = false;
             }
         }
 
@@ -1924,7 +1893,6 @@ namespace P4G_Save_Tool
             {
                 OpenFile(File.OpenRead(filename = d.FileName));
                 Title = originalTitle + " - " + d.SafeFileName;
-                isFTP = false;
             }
         }
     }
