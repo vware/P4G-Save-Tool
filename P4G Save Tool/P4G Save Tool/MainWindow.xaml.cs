@@ -375,7 +375,7 @@ namespace P4G_Save_Tool
         byte[] currentFileCopy;
         bool readyEvents;
         bool[] scroll = { false, false };
-        int[] itemSel = new int[14] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        int[] itemSel = new int[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         ScrollViewer invScroll, stackScroll;
         Item[] charEList;
         List<Item> armor;
