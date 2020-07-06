@@ -367,7 +367,7 @@ namespace P4G_Save_Tool
         byte[] currentFileCopy;
         bool readyEvents;
         bool[] scroll = { false, false };
-        int[] itemSel = new int[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        int[] itemSel = new int[16] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         ScrollViewer invScroll, stackScroll;
         Item[] charEList;
         List<Item> armor;
@@ -381,6 +381,7 @@ namespace P4G_Save_Tool
         List<Item> socialLink;
         List<Item> shelf;
         List<Item> costumes;
+        List<Item> questitems;
         List<Item> other;
         SocialLink[] socialLinkIDs;
         string originalTitle = "P4G Save Tool";
@@ -501,6 +502,7 @@ namespace P4G_Save_Tool
                 "Costumes",
                 "Bugs",
                 "Fish",
+                "Quest Items",
                 "Other"
             };
 
@@ -573,6 +575,7 @@ namespace P4G_Save_Tool
             Item materialBlank = Utils.GetFromDatabase(Database.allItems, 1280, 1)[0];
             Item cardBlank = Utils.GetFromDatabase(Database.allItems, 1536, 1)[0];
             Item costumeBlank = Utils.GetFromDatabase(Database.allItems, 1792, 1)[0];
+            Item questitemsBlank = Utils.GetFromDatabase(Database.allItems, 977, 1)[0];
             Item otherBlank = Utils.GetFromDatabase(Database.allItems, 1024, 1)[0];
             Item mineralBlank = Utils.GetFromDatabase(Database.allItems, 2048, 1)[0];
 
@@ -600,6 +603,7 @@ namespace P4G_Save_Tool
             socialLink = new List<Item>(Utils.GetFromDatabase(Database.allItems, 1184, 20));
             shelf = new List<Item>(Utils.GetFromDatabase(Database.allItems, 2056, 5));
             costumes = new List<Item>(Utils.GetFromDatabase(Database.allItems, 1792, 193));
+            questitems = new List<Item>(Utils.GetFromDatabase(Database.allItems, 978, 29));
             other = new List<Item>();
 
             accessories.AddRange(Utils.GetFromDatabase(Database.allItems, 615, 69));
@@ -694,7 +698,7 @@ namespace P4G_Save_Tool
             shelf.Insert(0, otherBlank);
             socialLink.Insert(0, otherBlank);
             books.Insert(0, otherBlank);
-
+            questitems.Insert(0, questitemsBlank);
             other.Insert(0, otherBlank);
             bugs.Insert(0, otherBlank);
             fish.Insert(0, otherBlank);
@@ -704,7 +708,7 @@ namespace P4G_Save_Tool
 
 
             weps = new List<Item>[] { mcWeps, yoWeps, chWeps, yuWeps, null, kaWeps, naWeps, teWeps };
-            items = new List<Item>[] { Database.weapons, armor, accessories, consumables, materials, cards, books, veggies, minerals, socialLink, shelf, costumes, bugs, fish, other };
+            items = new List<Item>[] { Database.weapons, armor, accessories, consumables, materials, cards, books, veggies, minerals, socialLink, shelf, costumes, bugs, fish, questitems, other };
 
             itemSectBox.ItemsSource = itmSections;
             itemSectBox.SelectedIndex = 0;
@@ -3818,7 +3822,7 @@ namespace P4G_Save_Tool
             "0x3CE",
             "0x3CF",
             "0x3D0",
-            "0x3D1",
+            "Blank",
             "Angel Statue",
             "Demon Statue",
             "Ritz Wire",
