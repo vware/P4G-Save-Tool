@@ -6,8 +6,8 @@
         xmlns:flow="Windows.Navigation"
         xmlns:local="clr-namespace:P4G_Save_Tool"
         mc:Ignorable="d"
-        Title="About Version 1.6.0" Height="127" Width="534" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
-    <Grid Height="96" VerticalAlignment="Top" HorizontalAlignment="Left" Width="526">
+        Title="About P4G Save Tool" Height="128.36" Width="534" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+    <Grid Height="95" VerticalAlignment="Top" HorizontalAlignment="Left" Width="526">
         <TextBlock HorizontalAlignment="Left" Height="35" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" TextAlignment="Center">
             Written by Fennec-kun with aid from TGE, Shrinefox, and Pan from
             <Hyperlink NavigateUri="http://s15.zetaboards.com/Amicitia/index/" RequestNavigate="Hyperlink_RequestNavigate">
@@ -20,16 +20,16 @@
             </Hyperlink>
             <LineBreak/>
         </TextBlock>
-        <TextBlock HorizontalAlignment="Left" FontSize="10" Height="20" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" TextAlignment="Center">
-            Special thanks to you guys who report issues on my 
-            <Hyperlink NavigateUri="https://github.com/Fennec-kun/P4G-Save-Tool" RequestNavigate="Hyperlink_RequestNavigate">
-                GitHub            
-            </Hyperlink>!
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Width="506" TextAlignment="Center" Height="25" VerticalAlignment="Bottom">
-            This was made possible by
-            <Hyperlink NavigateUri="https://henkaku.xyz" RequestNavigate="Hyperlink_RequestNavigate">
-                HENkaku.xyz
+        <TextBlock HorizontalAlignment="Left" Height="35" Margin="10,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" TextAlignment="Center">
+            Modified for the PC release by Georg Veichtlbauer in 2020
+            <LineBreak/>
+            Check here:
+            <Hyperlink NavigateUri="https://www.vware.at" RequestNavigate="Hyperlink_RequestNavigate">
+                Homepage
+            </Hyperlink>
+            -
+            <Hyperlink NavigateUri="https://github.com/vware/P4G-Save-Tool" RequestNavigate="Hyperlink_RequestNavigate">
+                GitHub
             </Hyperlink>
         </TextBlock>
     </Grid>
