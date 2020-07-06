@@ -196,8 +196,8 @@ namespace P4G_Save_Tool
         {
             byte[] raw = Encoding.Unicode.GetBytes(name);
             ushort charValue = 0;
-            for(int i = 0; i < 9; i++)
-            { 
+            for (int i = 0; i < 9; i++)
+            {
                 charValue = 0;
                 if (i < name.Length)
                 {
@@ -256,7 +256,7 @@ namespace P4G_Save_Tool
         public static Item[] GetFromDatabase(string[] database, ushort start, ushort length)
         {
             Item[] res = new Item[length];
-            for(ushort i = 0; i < length; i++)
+            for (ushort i = 0; i < length; i++)
             {
                 ushort id = (ushort)(i + start);
                 res[i] = new Item(database[id], id);
@@ -362,7 +362,7 @@ namespace P4G_Save_Tool
         }
         public SocialLink Copy()
         {
-            return new SocialLink(name, id, tarot, level,progress, flag);
+            return new SocialLink(name, id, tarot, level, progress, flag);
         }
         public SocialLink Copy(byte level, byte progress, byte flag)
         {
@@ -421,7 +421,7 @@ namespace P4G_Save_Tool
         public string Yen
         {
             get { return yen.ToString(); }
-        } 
+        }
 
         public MainWindow()
         {
@@ -437,7 +437,7 @@ namespace P4G_Save_Tool
 
             socialStats = new ushort[5];
 
-            understandingLevels = new string[]{ "Basic", "Kindly", "Generous", "Motherly", "Saintly" };
+            understandingLevels = new string[] { "Basic", "Kindly", "Generous", "Motherly", "Saintly" };
             knowledgeLevels = new string[] { "Aware", "Informed", "Expert", "Professor", "Sage" };
             courageLevels = new string[] { "Average", "Reliable", "Brave", "Daring", "Heroic" };
             expressionLevels = new string[] { "Rough", "Eloquent", "Persuasive", "Touching", "Enthralling" };
@@ -597,7 +597,7 @@ namespace P4G_Save_Tool
             List<Item> bugs = new List<Item>(Utils.GetFromDatabase(Database.allItems, 909, 7));
 
             List<Item> fish = new List<Item>(Utils.GetFromDatabase(Database.allItems, 1004, 3));
-        
+
             armor = new List<Item>(Utils.GetFromDatabase(Database.allItems, 257, 8));
             accessories = new List<Item>(Utils.GetFromDatabase(Database.allItems, 513, 96));
             consumables = new List<Item>(Utils.GetFromDatabase(Database.allItems, 769, 51));
@@ -721,33 +721,33 @@ namespace P4G_Save_Tool
             member.ItemsSource = Database.party;
             member.SelectedIndex = 0;
 
-            skillBox1.ItemsSource = Database.skills;    compSkillBox1.ItemsSource = Database.skills;
-            skillBox2.ItemsSource = Database.skills;    compSkillBox2.ItemsSource = Database.skills;
-            skillBox3.ItemsSource = Database.skills;    compSkillBox3.ItemsSource = Database.skills;
-            skillBox4.ItemsSource = Database.skills;    compSkillBox4.ItemsSource = Database.skills;
-            skillBox5.ItemsSource = Database.skills;    compSkillBox5.ItemsSource = Database.skills;
-            skillBox6.ItemsSource = Database.skills;    compSkillBox6.ItemsSource = Database.skills;
-            skillBox7.ItemsSource = Database.skills;    compSkillBox7.ItemsSource = Database.skills;
-            skillBox8.ItemsSource = Database.skills;    compSkillBox8.ItemsSource = Database.skills;
+            skillBox1.ItemsSource = Database.skills; compSkillBox1.ItemsSource = Database.skills;
+            skillBox2.ItemsSource = Database.skills; compSkillBox2.ItemsSource = Database.skills;
+            skillBox3.ItemsSource = Database.skills; compSkillBox3.ItemsSource = Database.skills;
+            skillBox4.ItemsSource = Database.skills; compSkillBox4.ItemsSource = Database.skills;
+            skillBox5.ItemsSource = Database.skills; compSkillBox5.ItemsSource = Database.skills;
+            skillBox6.ItemsSource = Database.skills; compSkillBox6.ItemsSource = Database.skills;
+            skillBox7.ItemsSource = Database.skills; compSkillBox7.ItemsSource = Database.skills;
+            skillBox8.ItemsSource = Database.skills; compSkillBox8.ItemsSource = Database.skills;
 
 
             itemBox.ItemsSource = items[0];
             personaIDs.ItemsSource = personae;
             phaseBox.ItemsSource = Database.phases;
             nextPhaseBox.ItemsSource = Database.phases;
-            skillBox1.SelectedIndex = 0;    compSkillBox1.SelectedIndex = 0;
-            skillBox2.SelectedIndex = 0;    compSkillBox2.SelectedIndex = 0;
-            skillBox3.SelectedIndex = 0;    compSkillBox3.SelectedIndex = 0;
-            skillBox4.SelectedIndex = 0;    compSkillBox4.SelectedIndex = 0;
-            skillBox5.SelectedIndex = 0;    compSkillBox5.SelectedIndex = 0;
-            skillBox6.SelectedIndex = 0;    compSkillBox6.SelectedIndex = 0;
-            skillBox7.SelectedIndex = 0;    compSkillBox7.SelectedIndex = 0;
-            skillBox8.SelectedIndex = 0;    compSkillBox8.SelectedIndex = 0;
+            skillBox1.SelectedIndex = 0; compSkillBox1.SelectedIndex = 0;
+            skillBox2.SelectedIndex = 0; compSkillBox2.SelectedIndex = 0;
+            skillBox3.SelectedIndex = 0; compSkillBox3.SelectedIndex = 0;
+            skillBox4.SelectedIndex = 0; compSkillBox4.SelectedIndex = 0;
+            skillBox5.SelectedIndex = 0; compSkillBox5.SelectedIndex = 0;
+            skillBox6.SelectedIndex = 0; compSkillBox6.SelectedIndex = 0;
+            skillBox7.SelectedIndex = 0; compSkillBox7.SelectedIndex = 0;
+            skillBox8.SelectedIndex = 0; compSkillBox8.SelectedIndex = 0;
             personaIDs.SelectedIndex = 0;
             phaseBox.SelectedIndex = 0;
             nextPhaseBox.SelectedIndex = 0;
             itemBox.SelectedIndex = 0;
-            slots = new Persona[][] 
+            slots = new Persona[][]
             {
                new Persona[12] { new Persona(), new Persona(), new Persona(), new Persona(), new Persona(), new Persona(), new Persona(), new Persona(), new Persona(), new Persona(), new Persona(), new Persona() },
                new Persona[1] { new Persona() },
@@ -789,13 +789,13 @@ namespace P4G_Save_Tool
             nextDayBox.Text = "0";
 
             string[] args = Environment.GetCommandLineArgs();
-            if(args.Length > 1)
+            if (args.Length > 1)
             {
                 string file = args[1];
-                if(File.Exists(file))
+                if (File.Exists(file))
                 {
                     int last = file.LastIndexOf('\\');
-                    filename = file.Substring(last+1, file.Length-(last + 1));
+                    filename = file.Substring(last + 1, file.Length - (last + 1));
 
                     OpenFile(File.OpenRead(file));
                     Title = originalTitle + " - " + filename;
@@ -1005,8 +1005,8 @@ namespace P4G_Save_Tool
             if (readyEvents)
             {
                 readyEvents = false;
-                for(int i = 0; i < personae.Count; i++)
-                    if((personaIDs.Items[i] as Item).ID == slots[member.SelectedIndex][personaSlot.SelectedIndex].id)
+                for (int i = 0; i < personae.Count; i++)
+                    if ((personaIDs.Items[i] as Item).ID == slots[member.SelectedIndex][personaSlot.SelectedIndex].id)
                         personaIDs.SelectedIndex = i;
                 skillBox1.SelectedItem = slots[member.SelectedIndex][personaSlot.SelectedIndex].skill1;
                 skillBox2.SelectedItem = slots[member.SelectedIndex][personaSlot.SelectedIndex].skill2;
@@ -1092,7 +1092,7 @@ namespace P4G_Save_Tool
 
         private void yenBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(readyEvents)
+            if (readyEvents)
             {
                 uint result = 0;
                 if (uint.TryParse(yenBox.Text, out result))
@@ -1105,7 +1105,7 @@ namespace P4G_Save_Tool
 
         private void phaseBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(readyEvents)
+            if (readyEvents)
             {
                 DayPhase = (byte)phaseBox.SelectedIndex;
             }
@@ -1165,7 +1165,7 @@ namespace P4G_Save_Tool
                 w.WritePString(surname);
                 w.WritePString(firstname);
                 w.BaseStream.Position = 136;
-                for(int i = 0; i < invBox.Items.Count; i++)
+                for (int i = 0; i < invBox.Items.Count; i++)
                 {
                     inventory[(invBox.Items[i] as Item).ID] = byte.Parse((stackBox.Items[i] as TextBox).Text);
                 }
@@ -1199,7 +1199,7 @@ namespace P4G_Save_Tool
                 w.Write(mcTotalXp);
 
                 w.BaseStream.Position = 3336;
-                for(byte i = 0; i < 5; i++)
+                for (byte i = 0; i < 5; i++)
                     w.Write(socialStats[i]);
 
                 w.BaseStream.Position = 6484;
@@ -1224,7 +1224,7 @@ namespace P4G_Save_Tool
                     w.Write(s.Level);
                     w.BaseStream.Position++;
                     w.Write(s.Progress);
-                    w.BaseStream.Position+=7;
+                    w.BaseStream.Position += 7;
                     w.Write(s.Flag);
                     if (i < lcount - 1) w.BaseStream.Position += 3;
                 }
@@ -1236,7 +1236,7 @@ namespace P4G_Save_Tool
                 for (int i = 0; i < lcount2; i++)
                 {
                     Persona persona = compendiumBox.Items[i] as Persona;
-                    w.BaseStream.Position = 9688 + (48*(persona.id-1));
+                    w.BaseStream.Position = 9688 + (48 * (persona.id - 1));
                     w.WritePersona(persona);
                 }
             }
@@ -1249,7 +1249,7 @@ namespace P4G_Save_Tool
 
         private void itemSectBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(readyEvents)
+            if (readyEvents)
             {
                 itemBox.ItemsSource = items[itemSectBox.SelectedIndex];
                 itemBox.SelectedIndex = itemSel[itemSectBox.SelectedIndex];
@@ -1263,7 +1263,7 @@ namespace P4G_Save_Tool
             invBox.SelectedItem = item;
             var box = new TextBox() { Text = stack.ToString(), Width = 30, Height = 16, TextWrapping = TextWrapping.NoWrap, TextAlignment = TextAlignment.Right };
             box.PreviewTextInput += personaID_PreviewTextInput;
-            box.SelectionChanged += (object o, RoutedEventArgs e) => 
+            box.SelectionChanged += (object o, RoutedEventArgs e) =>
             {
                 stackBox.SelectedItem = e.Source;
             };
@@ -1367,7 +1367,7 @@ namespace P4G_Save_Tool
 
         private void MCLVSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if(readyEvents)
+            if (readyEvents)
             {
                 mcLevel = (byte)(e.Source as Slider).Value;
                 if (mcLevel > 99)
@@ -1467,7 +1467,7 @@ namespace P4G_Save_Tool
 
         private void wepBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(readyEvents)
+            if (readyEvents)
                 equippedWeapons[(charBox.SelectedItem as Item).ID] = wepBox.SelectedItem != null ? (wepBox.SelectedItem as Item).ID : (ushort)0;
         }
 
@@ -1583,7 +1583,7 @@ namespace P4G_Save_Tool
                     byte level = r.ReadByte();
                     r.BaseStream.Position++;
                     byte progress = r.ReadByte();
-                    r.BaseStream.Position+=7;
+                    r.BaseStream.Position += 7;
                     byte flag = r.ReadByte();
                     if (id != 0)
                     {
@@ -1596,7 +1596,7 @@ namespace P4G_Save_Tool
                                 found = true;
                             }
                         }
-                        if(!found)
+                        if (!found)
                         {
                             sLinkBox.Items.Add(new SocialLink("Unknown (" + id.ToString() + ')', id, 0, level, progress, flag));
                         }
@@ -1618,7 +1618,7 @@ namespace P4G_Save_Tool
                 r.BaseStream.Position = 0;
                 currentFileCopy = r.ReadBytes((int)r.BaseStream.Length);
 
-                if(compendiumBox.Items.Count > 0)
+                if (compendiumBox.Items.Count > 0)
                     compendiumBox.SelectedIndex = 0;
                 Database.party[0] = firstname + surname;
                 member.ItemsSource = Database.party;
@@ -1683,7 +1683,7 @@ namespace P4G_Save_Tool
 
             OpenFile(responseStream);
             response.Close();
-            filename = ftpAddress; 
+            filename = ftpAddress;
             isFTP = true;
         }
 
@@ -1781,10 +1781,10 @@ namespace P4G_Save_Tool
                             compendiumBox.ScrollIntoView(compendiumBox.SelectedItem);
                         }
                     }
-                    if(!exists)
+                    if (!exists)
                     {
                         AddCompendiumItem(new Persona(true, 0, (compendiumComboBox.SelectedItem as Item).ID, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1));
-                        compendiumBox.SelectedIndex = compendiumBox.Items.Count-1;
+                        compendiumBox.SelectedIndex = compendiumBox.Items.Count - 1;
                         compendiumBox.ScrollIntoView(compendiumBox.SelectedItem);
                     }
                 }
@@ -1799,13 +1799,13 @@ namespace P4G_Save_Tool
 
         private void xpBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(readyEvents)
+            if (readyEvents)
             {
                 uint result = 0;
                 if (uint.TryParse(xpBox.Text, out result))
                     slots[member.SelectedIndex][personaSlot.SelectedIndex].totalxp = result;
                 else
-                xpBox.Text = slots[member.SelectedIndex][personaSlot.SelectedIndex].totalxp.ToString();
+                    xpBox.Text = slots[member.SelectedIndex][personaSlot.SelectedIndex].totalxp.ToString();
             }
         }
 
@@ -1835,11 +1835,11 @@ namespace P4G_Save_Tool
             if (!byte.TryParse(dayBox.Text, out result))
             {
                 int result2 = 0;
-                if(int.TryParse(dayBox.Text, out result2))
+                if (int.TryParse(dayBox.Text, out result2))
                 {
-                    if(result2 > 255)
+                    if (result2 > 255)
                         MessageBox.Show(this, "Max is 255.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    else if(result2 < 0)
+                    else if (result2 < 0)
                         MessageBox.Show(this, "Day number can't be negative.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                     Day = result;
                     return;
@@ -1900,14 +1900,14 @@ namespace P4G_Save_Tool
         private void calcXp_Click(object sender, RoutedEventArgs e)
         {
             byte level = mcLevel;
-            uint xp = (uint)(((uint)Math.Pow(level, 4) + 4 * (uint)Math.Pow(level, 3) + 53 * (uint)Math.Pow(level, 2) - 58 * level)/10);
+            uint xp = (uint)(((uint)Math.Pow(level, 4) + 4 * (uint)Math.Pow(level, 3) + 53 * (uint)Math.Pow(level, 2) - 58 * level) / 10);
             mcXpBox.Text = xp.ToString();
         }
 
         private void calcXp_Copy_Click(object sender, RoutedEventArgs e)
         {
             byte level = slots[member.SelectedIndex][personaSlot.SelectedIndex].level;
-            uint xp = (uint)(((uint)Math.Pow(level, 4) + 4 * (uint)Math.Pow(level, 3) + 53 * (uint)Math.Pow(level, 2) - 58 * level)/10);
+            uint xp = (uint)(((uint)Math.Pow(level, 4) + 4 * (uint)Math.Pow(level, 3) + 53 * (uint)Math.Pow(level, 2) - 58 * level) / 10);
             xpBox.Text = xp.ToString();
         }
 
@@ -1976,8 +1976,8 @@ namespace P4G_Save_Tool
             "After School",
             "Evening"
             };
-            public static string[] party { get;set; } = new string[]
-            {
+        public static string[] party { get; set; } = new string[]
+        {
             "Yu Narukami",
             "Yosuke Hanamura",
             "Chie Satonaka",
@@ -1986,9 +1986,9 @@ namespace P4G_Save_Tool
             "Kanji Tatsumi",
             "Naoto Shirogane",
             "Teddie",
-            };
-            public static string[] personae = new string[]
-            {
+        };
+        public static string[] personae = new string[]
+        {
             "000",
             "Izanagi",
             "Tzitzimitl",
@@ -2239,9 +2239,9 @@ namespace P4G_Save_Tool
             "Raja Naga",
             "Laksmi",
             "Magatsu-Izanagi"
-            };
-            public static string[] allSkills = new string[]
-            {
+        };
+        public static string[] allSkills = new string[]
+        {
             "Blank",
             "Agi",
             "Agilao",
@@ -2866,9 +2866,9 @@ namespace P4G_Save_Tool
             "Blank",
             "Blank",
             "Blank",
-            };
-            public static string[] allItems = new string[]
-            {
+        };
+        public static string[] allItems = new string[]
+        {
             "Blank",
             "Golf Club",
             "Titanium Club",
@@ -5429,8 +5429,8 @@ namespace P4G_Save_Tool
             "0x9FD",
             "0x9FE",
             "0x9FF",
-            };
+        };
 
-            #endregion
+        #endregion
     }
 }
