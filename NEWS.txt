@@ -1,0 +1,9 @@
+Version 1.7
+===========
+* ADDED: Support for the PC port of the game (update the MD5 in .binslot file)
+* ADDED: "Quest Items" category to the items tab
+* CHANGED: Updated and cleaned some of the code
+* CHANGED: Modified the about dialog slightly
+* CHANGED: Added a NEWS.txt
+* CHANGED: Only enable save menu items after opening a file to prevent crashes
+* FIXED: Crash when selecting the "Other" item category
