@@ -15,8 +15,8 @@
         <Menu x:Name="menu" Height="20" VerticalAlignment="Top">
             <MenuItem Header="File">
                 <MenuItem Header="Open" Click="Open_Click"/>
-                <MenuItem Header="Save" Click="Save_Click"/>
-                <MenuItem Header="Save As" Click="SaveAs_Click"/>
+                <MenuItem x:Name="saveMenu" Header="Save" Click="Save_Click" IsEnabled="False"/>
+                <MenuItem x:Name="saveAsMenu" Header="Save As" Click="SaveAs_Click" IsEnabled="False"/>
             </MenuItem>
             <MenuItem Header="About" Click="About_Click"/>
         </Menu>

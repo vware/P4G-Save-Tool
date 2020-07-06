@@ -1663,6 +1663,9 @@ namespace P4G_Save_Tool
 
                 member_SelectionChanged(null, null);
                 charBox_SelectionChanged(null, null);
+
+                saveMenu.IsEnabled = true;
+                saveAsMenu.IsEnabled = true;
             }
         }
 
