@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -1235,6 +1236,18 @@ namespace P4G_Save_Tool
                     Persona persona = compendiumBox.Items[i] as Persona;
                     w.BaseStream.Position = 9688 + (48 * (persona.id - 1));
                     w.WritePersona(persona);
+                }
+            }
+
+            if (File.Exists(filename + "slot"))
+            {
+                byte[] md5 = MD5.Create().ComputeHash(File.OpenRead(filename));
+                Stream s = File.OpenWrite(filename + "slot");
+
+                using (BinaryWriter w = new BinaryWriter(s))
+                {
+                    w.Seek(0x18, 0);
+                    w.Write(md5);
                 }
             }
         }
